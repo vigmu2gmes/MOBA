@@ -1,2 +1,2 @@
-local test = require("COLLECTIONS.1loader.mp_test")
+local test = require("COLLECTIONS.1loader.moba")
 
