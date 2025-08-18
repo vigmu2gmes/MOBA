@@ -3,16 +3,19 @@
 -- require "my_directory.my_file"
 -- in any script using the functions.
 
-local Colyseus = require("colyseus.client")
+local ColyseusClient = require("colyseus.client")
+local ColyseusSDK = require("colyseus.sdk")
 
 local client
+local room
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	
-	client = Colyseus("ws://localhost:2567")
+	client = ColyseusClient("ws://localhost:2567")
 
-	client:join_or_create("my_room")
-
-	pprint(client)
+	client:join_or_create("my_room", function(err, _room)
+		room = _room
+		local callbacks = ColyseusSDK.callbacks(room)
+	end)
 end
