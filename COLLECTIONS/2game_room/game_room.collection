@@ -1,0 +1,10 @@
+name: "game_room"
+scale_along_z: 0
+embedded_instances {
+  id: "game_room_gui"
+  data: "components {\n"
+  "  id: \"game_room\"\n"
+  "  component: \"/COLLECTIONS/2game_room/gui/game_room.gui\"\n"
+  "}\n"
+  ""
+}

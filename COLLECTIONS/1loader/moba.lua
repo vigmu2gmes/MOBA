@@ -13,13 +13,12 @@ function init(self)
 	
 	client = ColyseusSDK.Client("ws://localhost:2567")
 	
-	client:join_or_create("match", function(err, _room)
+	client:join_or_create("my_room", {}, function(err, _room)
 		room = _room
+		local callbacks = ColyseusSDK.callbacks(room)
 
-		room:on_message("game_message", function(message)
-			label.set_text("/loader#label1", message)
+		callbacks:on_add("players", function(player, seesionId)
+			pprint(player);
 		end)
-		
 	end)
-	
 end
