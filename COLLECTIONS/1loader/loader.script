@@ -9,7 +9,7 @@ end
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	self.current_proxy = nil
-	msg.post("#", "main_menu")
+	msg.post("#", "game_room")
 end
 
 function on_message(self, message_id, message, sender)

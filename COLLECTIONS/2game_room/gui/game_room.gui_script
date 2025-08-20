@@ -1,13 +1,30 @@
-local Colyseus = require("COLLECTIONS.1loader.moba")
+local C = require("CODING.modules.required")
+
+local client
+local room
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
+
+	client = C.CC.Client("ws://localhost:2567")	
+
+
 end
 
 function on_input(self, action_id, action)
 	if action_id == hash("touch") and action.released then
 		if gui.pick_node(gui.get_node("box"), action.x, action.y) then
-			print(true)
+			client:join_or_create("my_room", function(err, _room)
+				if err then
+					pprint(err)
+				end
+
+				room = _room
+				print(room.name)
+				if room then
+					msg.post("loader:/loader#loader", "match")
+				end
+			end)
 		end
 	end
 end

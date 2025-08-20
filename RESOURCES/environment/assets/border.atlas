@@ -1,0 +1,4 @@
+images {
+  image: "/RESOURCES/environment/png/border.png"
+}
+extrude_borders: 2

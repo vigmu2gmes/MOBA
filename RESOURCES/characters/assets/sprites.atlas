@@ -1,0 +1,19 @@
+images {
+  image: "/RESOURCES/characters/png/player.png"
+}
+images {
+  image: "/RESOURCES/characters/png/player1.png"
+}
+images {
+  image: "/RESOURCES/characters/png/player2.png"
+}
+images {
+  image: "/RESOURCES/characters/png/player3.png"
+}
+images {
+  image: "/RESOURCES/characters/png/player4.png"
+}
+images {
+  image: "/RESOURCES/characters/png/player5.png"
+}
+extrude_borders: 2

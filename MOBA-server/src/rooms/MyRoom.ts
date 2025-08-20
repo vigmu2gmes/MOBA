@@ -8,12 +8,12 @@ export class MyRoom extends Room<MyRoomState> {
   onCreate (options: any) {  }
 
   onJoin (client: Client, options: any) {
-    console.log(client.sessionId, "joined!");
+    console.log(client.sessionId, "TRUE");
     this.state.players.set(client.sessionId, new Player());
   }
 
   onLeave (client: Client, consented: boolean) {
-    console.log(client.sessionId, "left!");
+    console.log(client.sessionId, "FALSE");
     this.state.players.delete(client.sessionId);
   }
 
