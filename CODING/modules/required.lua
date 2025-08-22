@@ -14,6 +14,6 @@ req.CC = require("colyseus.sdk")
 local client
 local room 
 
-
+req.client = req.CC.Client("ws://localhost:2567")
 
 return req

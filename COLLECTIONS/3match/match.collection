@@ -2,11 +2,7 @@ name: "match"
 scale_along_z: 0
 embedded_instances {
   id: "labels"
-  data: "components {\n"
-  "  id: \"match\"\n"
-  "  component: \"/COLLECTIONS/3match/match.script\"\n"
-  "}\n"
-  "embedded_components {\n"
+  data: "embedded_components {\n"
   "  id: \"label\"\n"
   "  type: \"label\"\n"
   "  data: \"size {\\n"
@@ -26,7 +22,11 @@ embedded_instances {
 }
 embedded_instances {
   id: "env"
-  data: "embedded_components {\n"
+  data: "components {\n"
+  "  id: \"match\"\n"
+  "  component: \"/COLLECTIONS/3match/match.script\"\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"default_animation: \\\"border\\\"\\n"
@@ -40,6 +40,14 @@ embedded_instances {
   "    x: 480.0\n"
   "    y: 320.0\n"
   "  }\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "characters"
+  data: "components {\n"
+  "  id: \"characters\"\n"
+  "  component: \"/RESOURCES/characters/assets/characters.factory\"\n"
   "}\n"
   ""
 }
