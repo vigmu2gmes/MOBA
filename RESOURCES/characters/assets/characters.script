@@ -1,14 +1,14 @@
-go.property("sprites", hash("none"))
+local C = require("CODING.modules.required")
+
+
 
 function init(self)
-	if self.sprites ~= nil then
-		sprite.play_flipbook("#sprite", self.sprites)
-	else
-		msg.post("#sprite", "disable")
-	end
+	msg.post(".", "acquire_input_focus")
 
 	self.direction = vmath.vector3()
 	self.speed = 100
+
+	sprite.play_flipbook("#sprite", "player" .. C.num)
 end
 
 function update(self, dt)

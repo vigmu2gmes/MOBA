@@ -1,9 +1,9 @@
 key_trigger {
-  input: KEY_0
+  input: KEY_UP
   action: "up"
 }
 key_trigger {
-  input: KEY_1
+  input: KEY_DOWN
   action: "down"
 }
 mouse_trigger {

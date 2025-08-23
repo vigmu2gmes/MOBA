@@ -1,38 +1,15 @@
 local C = require("CODING.modules.required")
 
-local match_position = 
-{
-	A = { x = 100, y = 200, z = 0 },
-	B = { x = 480, y = 300, z = 0 },
-	C = { x = 860, y = 200, z = 0 }
-}
-
-local room 
 function init(self)
-	
 	msg.post("#", "start_match")
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("start_match") then
-		C.client:join_or_create("my_room", function(err, _room)
-			room = _room
-			local callbacks = C.CC.callbacks(room)
-			callbacks:on_add("players", function(players, sessionId)
-				players = factory.create("/characters#characters", vmath.vector3(480, 300, 0))
-			end)
-		end)
+		C.create_room()
 	end
 end
 
 function update(self, dt)
-	if room then 
-		local dx, dy = 0, 0
-
-		if dx ~= 0 or dy ~= 0 then
-			room:send("move", { x = dx, y = dy })
-		end
-
-		print(dx, dy)
-	end
+	
 end
