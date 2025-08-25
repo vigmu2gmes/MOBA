@@ -1,1 +1,10 @@
 Mutliplayer Online Battle Arena Prototype/Demo
+
+Server-side and Client-side are talking with adding players to the game world. 
+
+Need to figure out what MOBAs need to communicate to the player.
+	- Positions - Enemies and Players
+	- HP - Enemies, obstacles, opposition bases and Players
+	- Collisions? Borders, obstacles, players and hordes?
+
+GUI work

@@ -9,16 +9,15 @@ export class MyRoom extends Room<MyRoomState> {
 
   onJoin (client: Client, options: any) {
     console.log(client.sessionId, "TRUE");
-    
-    console.log("HELLO WORLD")
    
-    const mapwidth = 400
-    const mapheight = 400
+    let coords: number[][] = [
+    [400, 400],
+    [200, 200]
+    ];
 
-    this.state.players.set(client.sessionId, new Player().assign({ x: Math.floor(Math.random() * mapwidth), y: Math.floor(Math.random() * mapheight) }));
-    
+    this.state.players.set(client.sessionId, new Player().assign({ x: coords[0][0], y: coords[0][1] }));
   }
-
+// Trying sending req.num from required.lua back to myroom.ts
   onLeave (client: Client, consented: boolean) {
     console.log(client.sessionId, "FALSE");
     this.state.players.delete(client.sessionId);

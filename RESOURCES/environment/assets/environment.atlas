@@ -1,0 +1,10 @@
+images {
+  image: "/RESOURCES/environment/png/border.png"
+}
+images {
+  image: "/RESOURCES/environment/png/tower.png"
+}
+images {
+  image: "/RESOURCES/environment/png/projectile.png"
+}
+extrude_borders: 2

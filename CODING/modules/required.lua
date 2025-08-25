@@ -22,7 +22,6 @@ function req.create_room()
 
 		callbacks:on_add("players", function (player, sessionId) 
 			req.num = req.num + 1
-			print(req.num)
 			factory.create("/characters#characters", vmath.vector3(player.x, player.y, 0))
 		end)
 	end)
